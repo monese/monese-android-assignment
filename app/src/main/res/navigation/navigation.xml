@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/launchesFragment"
+    android:id="@+id/navigation">
+
+    <fragment
+        android:id="@+id/launchesFragment"
+        android:name="com.monese.assignment.ui.launches.LaunchesFragment" />
+
+    <fragment
+        android:id="@+id/rocketDetailsFragment"
+        android:name="com.monese.assignment.ui.rocketdetails.RocketDetailsFragment" />
+
+</navigation>
