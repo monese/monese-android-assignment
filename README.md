@@ -22,6 +22,8 @@ As a user, when I press on the launch in the list I want to see the next screen 
 The application should display a loading indicator if it is fetching data.
 The application should allow a user to refresh the data.
 
+LaunchesFragment should be refactored.
+
 
 The application should use Open Source REST API that can be found here: https://github.com/r-spacex/SpaceX-API
 
