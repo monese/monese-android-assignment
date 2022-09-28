@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.monese.assignment.R
@@ -67,14 +68,15 @@ class LaunchesFragment : Fragment() {
         }
 
         viewModel.getLaunches()
-        viewModel.launches.observe(
-            this.viewLifecycleOwner, {
+        lifecycleScope.launch {
+            viewModel.launches.collect {
                 Timber.d(it.toString())
                 recyclerView.adapter = LaunchesAdapter(
-                    it,
+                    it.orEmpty(),
                     dateFormatter
                 )
-            })
+            }
+        }
     }
 }
 
